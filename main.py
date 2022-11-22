@@ -32,7 +32,7 @@ def create_ec2(instance_type, sg_id, key_name, instance_name, user_data=None):
     instance = EC2_RESOURCE.create_instances(
         BlockDeviceMappings=[
             {
-                'DeviceName': '/dev/xvda',
+                'DeviceName': '/dev/sda1',
                 'Ebs': {
                     'DeleteOnTermination': True,
                     'VolumeSize': 20,
