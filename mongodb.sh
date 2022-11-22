@@ -1,5 +1,6 @@
 # Install and run MongoDB
 cd ~
+
 sudo git clone https://github.com/minhhungit/mongodb-cluster-docker-compose.git
 cd mongodb-cluster-docker-compose
 sudo docker-compose up -d
@@ -18,3 +19,9 @@ sh.enableSharding("MyDatabase")
 
 // Setup shardingKey for collection `MyCollection`**
 db.adminCommand( { shardCollection: "MyDatabase.MyCollection", key: { oemNumber: "hashed", zipCode: 1, supplierId: 1 } } )
+.exit
+
+cd ~
+curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-0.17.0.tar.gz
+tar xfvz ycsb-0.17.0.tar.gz
+cd ycsb-0.17.0
