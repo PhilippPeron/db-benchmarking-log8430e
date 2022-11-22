@@ -14,4 +14,4 @@ sudo apt-get update
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-
+sudo apt install docker-compose
