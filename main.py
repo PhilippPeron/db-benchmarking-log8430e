@@ -142,6 +142,11 @@ def run_ssh_commands(commands, instance_ip):
     Args:
         commands (list): list of commands as strings
         instance_ip (str): ip of instance"""
+    # Wait until instance is reachable
+    wait_time = 10
+    print(f"Waiting {wait_time}s to make sure instance is reachable")
+    time.sleep(wait_time)
+
     print("Running SSH commands...")
     ssh_commands = ["ssh", "-tt", "-i", private_key_filename, f"ubuntu@{instance_ip}"]
     # Connect via SSH and run commands
@@ -187,12 +192,7 @@ def start_instance():
     # Get the instance's IP
     instance_ip = retrieve_instance_ip(instance.id, silent=True)
 
-    # Wait until instance is reachable
-    wait_time = 10
-    print(f"Waiting {wait_time}s to make sure instance is reachable")
-    time.sleep(wait_time)
-    print(
-        f'Access standalone instance with: \'ssh -i {private_key_filename} ubuntu@{instance_ip}\'')
+    print(f'Access instance with: \'ssh -i {private_key_filename} ubuntu@{instance_ip}\'')
     commands = [
         f"sudo git clone https://github.com/PhilippPeron/db-benchmarking-log8430e.git\n"
         f"cd db-benchmarking-log8430e\n",
