@@ -15,3 +15,12 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo apt install docker-compose
+
+
+
+
+# Install and run MongoDB
+cd ~
+sudo git clone https://github.com/minhhungit/mongodb-cluster-docker-compose.git
+cd mongodb-cluster-docker-compose
+sudo docker-compose up -d
