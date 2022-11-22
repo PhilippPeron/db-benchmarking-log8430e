@@ -185,8 +185,9 @@ def terminate_all_running_instances():
 
 def start_instance():
     """Starts the instance for the database benchmark"""
+    user_data = """sudo git clone https://github.com/PhilippPeron/db-benchmarking-log8430e.git /home/ubuntu/db-benchmarking-log8430e"""
     # Create the instance with the key pair
-    instance = create_ec2('t2.micro', sg_id, key_name, 'db-instance', user_data="")
+    instance = create_ec2('t2.micro', sg_id, key_name, 'db-instance', user_data=user_data)
     print(f'Waiting for instance {instance.id} to be running...')
     instance.wait_until_running()
     # Get the instance's IP
