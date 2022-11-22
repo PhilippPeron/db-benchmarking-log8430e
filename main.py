@@ -198,7 +198,7 @@ def start_instance():
         f"cd db-benchmarking-log8430e\n",
         f"echo ENDING\n"
     ]
-    run_ssh_commands(commands, instance_ip)
+    # run_ssh_commands(commands, instance_ip)
     return instance
 
 
