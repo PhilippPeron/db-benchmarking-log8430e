@@ -30,6 +30,16 @@ def create_ec2(instance_type, sg_id, key_name, instance_name, user_data=None):
         instance: The created instance object
     """
     instance = EC2_RESOURCE.create_instances(
+        BlockDeviceMappings=[
+            {
+                'DeviceName': '/dev/xvda',
+                'Ebs': {
+                    'DeleteOnTermination': True,
+                    'VolumeSize': 20,
+                    'VolumeType': 'gp2',
+                },
+            },
+        ],
         ImageId='ami-0149b2da6ceec4bb0',
         MinCount=1,
         MaxCount=1,
