@@ -207,7 +207,7 @@ if __name__ == "__main__":
         terminate_all_running_instances()
         exit(0)
     # Create key pair
-    key_name = 'PROJECT_KEY'
+    key_name = 'ARCH_KEY'
     private_key_filename = f'./private_key_{key_name}.pem'
     create_key_pair(key_name, private_key_filename)
 
