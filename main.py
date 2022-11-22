@@ -1,4 +1,4 @@
-"""Script to create and benchmark a standalone MySQL server against a MySQL server cluster."""
+"""Script to create an instance for benchmarking databases."""
 
 import time
 import argparse
