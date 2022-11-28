@@ -1,8 +1,8 @@
-sudo mkdir cassandra-cluster-docker
+sudo mkdir cassandra-cluster-docker-compose
 
-sudo touch /home/ubuntu/cassandra-cluster-docker-compose/docker-compose.yml
-sudo chmod 777 /home/ubuntu/cassandra-cluster-docker-compose/docker-compose.yml
-sudo cat <<EOF >/home/ubuntu/cassandra-cluster-docker-compose/docker-compose.yml
+sudo touch /home/ubuntu/db-benchmarking-log8430e/cassandra-cluster-docker-compose/docker-compose.yml
+sudo chmod 777 /home/ubuntu/db-benchmarking-log8430e/cassandra-cluster-docker-compose/docker-compose.yml
+sudo cat <<EOF >/home/ubuntu/db-benchmarking-log8430e/cassandra-cluster-docker-compose/docker-compose.yml
 version: '3.9'
 
 services:
