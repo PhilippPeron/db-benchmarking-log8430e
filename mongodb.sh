@@ -18,7 +18,7 @@ docker exec -it mongo0 mongosh --eval "rs.initiate({
    {_id: 2, host: 'mongo2:27017'}
  ]
 })"
-sudo mkdir sudo mkdir ~/db-benchmarking-log8430e/results_mongodb
+sudo mkdir ~/db-benchmarking-log8430e/results_mongodb
 sudo mkdir ~/db-benchmarking-log8430e/results_mongodb/workloadA
 sudo mkdir ~/db-benchmarking-log8430e/results_mongodb/workloadB
 
