@@ -19,26 +19,28 @@ docker exec -it mongo1 mongosh --eval "rs.initiate({
  ]
 })"
 sudo mkdir /home/ubuntu/db-benchmarking-log8430e/results_mongodb
-sudo mkdir /home/ubuntu/db-benchmarking-log8430e/results_mongodb/workloadA
-sudo mkdir /home/ubuntu/db-benchmarking-log8430e/results_mongodb/workloadB
 
-# Run workloads
+# Run workloads three times and save results
 cd ycsb-0.17.0
-./bin/ycsb.sh load mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA/load1
-./bin/ycsb.sh run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA/run1
-./bin/ycsb.sh load mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB/load1
-./bin/ycsb.sh run mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB/run1
-sleep 10
-./bin/ycsb.sh load mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA/load2
-./bin/ycsb.sh run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA/run2
-./bin/ycsb.sh load mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB/load2
-./bin/ycsb.sh run mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB/run2
-sleep 10
-./bin/ycsb.sh load mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA/load3
-./bin/ycsb.sh run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA/run3
-./bin/ycsb.sh load mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB/load3
-./bin/ycsb.sh run mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB/run3
+./bin/ycsb.sh load mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA_load1.txt
+./bin/ycsb.sh run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA_run1.txt
+./bin/ycsb.sh load mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB_load1.txt
+./bin/ycsb.sh run mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB_run1.txt
+echo "\nRun complete (1/3). Waiting 60s before next run..."
 
+sleep 60
+./bin/ycsb.sh load mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA_load2.txt
+./bin/ycsb.sh run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA_run2.txt
+./bin/ycsb.sh load mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB_load2.txt
+./bin/ycsb.sh run mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB_run2.txt
+echo "\nRun complete (2/3). Waiting 60s before next run..."
+
+sleep 60
+./bin/ycsb.sh load mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA_load3.txt
+./bin/ycsb.sh run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA_run3.txt
+./bin/ycsb.sh load mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB_load3.txt
+./bin/ycsb.sh run mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB_run3.txt
+echo "Run complete (3/3)."
 
 # Stop all containers
 docker stop $(docker ps -a -q)
