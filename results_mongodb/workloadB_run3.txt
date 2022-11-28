@@ -1,0 +1,33 @@
+/usr/bin/java  -classpath /home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/conf:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar site.ycsb.Client -t -db site.ycsb.db.MongoDbClient -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1
+mongo client connection created with mongodb://127.0.0.1:27017/ycsb?w=1
+[OVERALL], RunTime(ms), 1839
+[OVERALL], Throughput(ops/sec), 543.773790103317
+[TOTAL_GCS_G1_Young_Generation], Count, 4
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 30
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 1.631321370309951
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 4
+[TOTAL_GC_TIME], Time(ms), 30
+[TOTAL_GC_TIME_%], Time(%), 1.631321370309951
+[READ], Operations, 954
+[READ], AverageLatency(us), 1062.5702306079666
+[READ], MinLatency(us), 491
+[READ], MaxLatency(us), 92671
+[READ], 95thPercentileLatency(us), 2081
+[READ], 99thPercentileLatency(us), 4995
+[READ], Return=OK, 954
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 3885.0
+[CLEANUP], MinLatency(us), 3884
+[CLEANUP], MaxLatency(us), 3885
+[CLEANUP], 95thPercentileLatency(us), 3885
+[CLEANUP], 99thPercentileLatency(us), 3885
+[UPDATE], Operations, 46
+[UPDATE], AverageLatency(us), 3688.913043478261
+[UPDATE], MinLatency(us), 1099
+[UPDATE], MaxLatency(us), 12271
+[UPDATE], 95thPercentileLatency(us), 5835
+[UPDATE], 99thPercentileLatency(us), 12271
+[UPDATE], Return=OK, 46

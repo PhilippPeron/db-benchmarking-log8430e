@@ -1,0 +1,32 @@
+/usr/bin/java  -classpath /home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/conf:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/lib/core-0.17.0.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/ubuntu/db-benchmarking-log8430e/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar site.ycsb.Client -load -db site.ycsb.db.MongoDbClient -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1
+mongo client connection created with mongodb://127.0.0.1:27017/ycsb?w=1
+[OVERALL], RunTime(ms), 693
+[OVERALL], Throughput(ops/sec), 0.0
+[TOTAL_GCS_G1_Young_Generation], Count, 3
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 25
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 3.6075036075036073
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 3
+[TOTAL_GC_TIME], Time(ms), 25
+[TOTAL_GC_TIME_%], Time(%), 3.6075036075036073
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 5934.0
+[CLEANUP], MinLatency(us), 5932
+[CLEANUP], MaxLatency(us), 5935
+[CLEANUP], 95thPercentileLatency(us), 5935
+[CLEANUP], 99thPercentileLatency(us), 5935
+[INSERT], Operations, 0
+[INSERT], AverageLatency(us), NaN
+[INSERT], MinLatency(us), 9223372036854775807
+[INSERT], MaxLatency(us), 0
+[INSERT], 95thPercentileLatency(us), 0
+[INSERT], 99thPercentileLatency(us), 0
+[INSERT], Return=ERROR, 1
+[INSERT-FAILED], Operations, 1
+[INSERT-FAILED], AverageLatency(us), 96032.0
+[INSERT-FAILED], MinLatency(us), 96000
+[INSERT-FAILED], MaxLatency(us), 96063
+[INSERT-FAILED], 95thPercentileLatency(us), 96063
+[INSERT-FAILED], 99thPercentileLatency(us), 96063
