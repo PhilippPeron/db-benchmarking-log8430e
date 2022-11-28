@@ -67,23 +67,23 @@ services:
 
 
 
-# docker exec -it mongo1 sh -c "mongo --port 30001"
+ docker exec -it mongo1 sh -c "mongo --port 30001"
 
-# rs.initiate(
-#  {
-#    _id : 'my-replica-set',
-#    members: [
-#      { _id : 0, host : "mongo1:30001" },
-#      { _id : 1, host : "mongo2:30002" },
-#      { _id : 2, host : "mongo3:30003" }
-#    ]
-#  }
-#)
+ rs.initiate(
+  {
+    _id : 'my-replica-set',
+    members: [
+      { _id : 0, host : "mongo1:30001" },
+      { _id : 1, host : "mongo2:30002" },
+      { _id : 2, host : "mongo3:30003" }
+    ]
+  }
+)
 
 # ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=1000 -p mongodb.upsert=true -p mongodb.url=mongodb://mongo1:30001,mongo2:30002,mongo3:30003/?replicaSet=my-replica-set
 EOF
 
 sudo docker-compose -f docker-compose-mongodb.yml up
 cd ..
-./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=1000 -p mongodb.upsert=true -p mongodb.url=mongodb://mongo1:30001,mongo2:30002,mongo3:30003/?replicaSet=my-replica-set
+sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=1000 -p mongodb.upsert=true -p mongodb.url=mongodb://mongo1:30001,mongo2:30002,mongo3:30003/?replicaSet=my-replica-set
 
