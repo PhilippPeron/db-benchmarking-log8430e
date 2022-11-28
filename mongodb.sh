@@ -14,7 +14,7 @@ sudo ln -s /usr/bin/python2 /usr/bin/python
 
 #Login stuff
 sudo usermod -aG docker ${USER}
-#sudo su - ${USER}
+sudo su - ${USER}
 
 # Install docker
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64" -o /usr/local/bin/docker-compose
@@ -59,7 +59,7 @@ for iter in {0..2}
     done
 
 # Stop all containers
-docker stop $(docker ps -a -q)
+sudo docker stop $(docker ps -a -q)
 
 # Delete network
-docker network rm mongoCluster
+sudo docker network rm mongoCluster
