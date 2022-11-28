@@ -17,11 +17,15 @@ sudo usermod -aG docker ${USER}
 curl -L "https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
+sudo curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-0.17.0.tar.gz
+cd ycsb-0.17.0
+mkdir database
+cd database
 
 
 
-sudo rm ~/mongodb-cluster-docker-compose/docker-compose.yml
-sudo touch ~/mongodb-cluster-docker-compose/docker-compose.yml
+
+sudo touch ./docker-compose-mongodb.yml
 sudo chmod 777 ~/mongodb-cluster-docker-compose/docker-compose.yml
 sudo cat <<EOF >~/mongodb-cluster-docker-compose/docker-compose.yml
 version: "3.8"
@@ -75,3 +79,6 @@ services:
 
 # ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=1000 -p mongodb.upsert=true -p mongodb.url=mongodb://mongo1:30001,mongo2:30002,mongo3:30003/?replicaSet=my-replica-set
 EOF
+
+sudo docker-compose -f docker-compose-mongodb.yml up
+./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=1000 -p mongodb.usert=true -p mongodb.url=mongodb://mongo1:30001,mongo2:30002,mongo3:30003/?replicaSet=my-replica-set
