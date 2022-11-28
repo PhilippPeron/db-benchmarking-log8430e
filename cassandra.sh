@@ -39,7 +39,8 @@ exit
 
 sudo mkdir /home/ubuntu/db-benchmarking-log8430e/results_cassandra
 
-cd ycsb-0-17-0
+cd ..
+cd ycsb-0.17.0
 
 bin/ycsb.sh load cassandra-cql -p hosts="localhost" -s -P workloads/workloada > ../results_cassandra/workloadA_load1.txt
 bin/ycsb.sh run cassandra-cql -p hosts="localhost" -s -P workloads/workloada > ../results_cassandra/workloadA_run1.txt
@@ -62,3 +63,4 @@ bin/ycsb.sh run cassandra-cql -p hosts="localhost" -s -P workloads/workloadb > .
 echo "Run complete (3/3)."
 
 docker stop $(docker ps -a -q)
+
