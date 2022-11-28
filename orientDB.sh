@@ -42,23 +42,23 @@ cd ycsb-0.17.0
 
 
 ./bin/ycsb.sh load orientdb -P workloads/workloada -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_load1.txt
-./bin/ycsb.sh run orientdb -P workloads/workloada -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadB_run1.txt
-./bin/ycsb.sh load orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_load1.txt
+./bin/ycsb.sh run orientdb -P workloads/workloada -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_run1.txt
+./bin/ycsb.sh load orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadB_load1.txt
 ./bin/ycsb.sh run orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadB_run1.txt
 echo "\nRun complete (1/3). Waiting 60s before next run..."
 sleep 60
 
 ./bin/ycsb.sh load orientdb -P workloads/workloada -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_load2.txt
-./bin/ycsb.sh run orientdb -P workloads/workloada -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadB_run2.txt
-./bin/ycsb.sh load orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_load2.txt
-./bin/ycsb.sh run orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_run2.txt
+./bin/ycsb.sh run orientdb -P workloads/workloada -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_run2.txt
+./bin/ycsb.sh load orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadB_load2.txt
+./bin/ycsb.sh run orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadB_run2.txt
 echo "\nRun complete (2/3). Waiting 60s before next run..."
 sleep 60
 
 ./bin/ycsb.sh load orientdb -P workloads/workloada -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_load3.txt
-./bin/ycsb.sh run orientdb -P workloads/workloada -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadB_run3.txt
-./bin/ycsb.sh load orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_load3.txt
-./bin/ycsb.sh run orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_run3.txt
+./bin/ycsb.sh run orientdb -P workloads/workloada -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadA_run3.txt
+./bin/ycsb.sh load orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadB_load3.txt
+./bin/ycsb.sh run orientdb -P workloads/workloadb -p orientdb.url=plocal:localhost:2480 -p orientdb.password=admin > ../results_orientdb/workloadB_run3.txt
 echo "\Run Complete"
 
 
