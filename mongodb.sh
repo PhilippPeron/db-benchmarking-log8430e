@@ -26,13 +26,13 @@ sudo mkdir /home/ubuntu/db-benchmarking-log8430e/results_mongodb/workloadB
 cd ycsb-0.17.0
 for iter in {1..3}
     do
-        ./bin/ycsb.sh load mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > /home/ubuntu/db-benchmarking-log8430e/results_mongodb/workloadA/load${iter}
-        ./bin/ycsb.sh run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > /home/ubuntu/db-benchmarking-log8430e/results_mongodb/workloadA/run${iter}
+        ./bin/ycsb.sh load mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA/load${iter}
+        ./bin/ycsb.sh run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA/run${iter}
     done
 for iter in {1..3}
     do
-        ./bin/ycsb.sh load mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > /home/ubuntu/db-benchmarking-log8430e/results_mongodb/workloadB/load${iter}
-        ./bin/ycsb.sh run mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > /home/ubuntu/db-benchmarking-log8430e/results_mongodb/workloadB/run${iter}
+        ./bin/ycsb.sh load mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB/load${iter}
+        ./bin/ycsb.sh run mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB/run${iter}
     done
 
 # Stop all containers
