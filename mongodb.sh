@@ -21,7 +21,7 @@ docker exec -it mongo1 mongosh --eval "rs.initiate({
 sudo mkdir /home/ubuntu/db-benchmarking-log8430e/results_mongodb
 
 # Run workloads three times and save results
-cd ycsb-0.17.0
+
 ./bin/ycsb.sh load mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA_load1.txt
 ./bin/ycsb.sh run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadA_run1.txt
 ./bin/ycsb.sh load mongodb -s -P workloads/workloadb -p mongodb.url=mongodb://127.0.0.1:27017/ycsb?w=1 > ../results_mongodb/workloadB_load1.txt
