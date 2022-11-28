@@ -1,6 +1,8 @@
-sudo touch ~/cassandra-cluster-docker-compose/docker-compose.yml
-sudo chmod 777 ~/cassandra-cluster-docker-compose/docker-compose.yml
-sudo cat <<EOF >~/cassandra-cluster-docker-compose/docker-compose.yml
+sudo mkdir cassandra-cluster-docker
+
+sudo touch /home/ubuntu/cassandra-cluster-docker-compose/docker-compose.yml
+sudo chmod 777 /home/ubuntu/cassandra-cluster-docker-compose/docker-compose.yml
+sudo cat <<EOF >/home/ubuntu/cassandra-cluster-docker-compose/docker-compose.yml
 version: '3.9'
 
 services:
